@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- index.xhtml -->
+<!-- Registration form that demonstrates various JSF components -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Select Your Sides</title>
+</h:head>
+<h:body>
+    <h:form>
+        <h1>Select Your Sides</h1>
+        <h:selectOneRadio id="osSelectOneRadio" value="#{addressBean.sideType}">
+            <f:selectItem itemValue="Cheesesticks" itemLabel="Cheesesticks"/>
+            <f:selectItem itemValue="Wings" itemLabel="Buffalo Wings"/>
+        </h:selectOneRadio>
+        <h:panelGrid columns="2" style="height: 96px; width:456px;">
+            <h:graphicImage name="cheesestick.jpg" library="images"/>
+            <h:graphicImage name="buffalowing.jpg" library="images"/>
+        </h:panelGrid>
+        <h:outputText value="Sides Quantity: "/>
+        <h:inputText id="sidesQuantity" value="#{addressBean.sidesQn}"/>
+        <p><h:commandButton value="Next Step: Select your Drink" action="selectdrink"/></p>
+    </h:form>
+</h:body>
+</html>
